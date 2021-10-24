@@ -27,7 +27,7 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate,U
             //saveButton.isEnabled = false
             saveButton.isHidden = true
             
-            // Core Data
+            // Core Data ile ekran seçimle açılmışsa verileri çekip filtrelemek
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             
@@ -65,7 +65,7 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate,U
             
         }
        
-        // Klavyeyi kapatma
+        // View'e Gesture Ekleme
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(gestureRecognizer)
@@ -80,7 +80,7 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate,U
     
     
     @IBAction func saveButton(_ sender: Any) {
-        
+//        Veriyi Core Dataya Kayıt Etme
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -106,11 +106,14 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate,U
             }
         
         
-        // Notification Center Kullanımı
+        // Notification Center Kullanımı ile Uyguloama İçinde Paket Gönderme
+        // Gönderilen paketi dinleyenler aracılığıyla tableview güncellenecek
         NotificationCenter.default.post(name: NSNotification.Name("New Data"), object: nil)
+        
+        // işlem bitince önceki ekrana gönderme
         self.navigationController?.popViewController(animated: true)
         
-        // TODO Click Save Button
+        
     }
     
     
@@ -122,7 +125,11 @@ class DetailsViewController: UIViewController, UIImagePickerControllerDelegate,U
     @objc func selectImage(){
         let picker = UIImagePickerController()
         picker.delegate = self
+        
+        // kaynak tipi camera, galeri vs olabiliyor
         picker.sourceType = .photoLibrary
+        
+        //Düzenlemeyi aktif et
         picker.allowsEditing = true
         present(picker, animated: true, completion: nil)
         

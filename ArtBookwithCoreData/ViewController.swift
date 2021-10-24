@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.delegate = self
         tableView.dataSource = self
-        
+        // Nav Toolbara + butonu ekleme
         navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonclicked))
         getCoreData()
         
@@ -34,25 +34,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //  NotificationCenter ile gelen paketi dinleme ve aksiyon alma
         NotificationCenter.default.addObserver(self, selector: #selector(getCoreData), name: NSNotification.Name("New Data"), object: nil)
     }
     
     @objc func addButtonclicked(){
+        
         selectedPainting = ""
         
         performSegue(withIdentifier: "toDetailsVC", sender: nil)
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // TableView Hücrelerinin İçeriğini Belirleme
         let cell = UITableViewCell()
         cell.textLabel?.text = nameArray[indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Tableview Hücre Sayısı
         return nameArray.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Seçim Algılama
         selectedPainting = nameArray[indexPath.row]
         selectedPaintingId = idArray[indexPath.row]
         performSegue(withIdentifier: "toDetailsVC", sender: nil)
@@ -61,6 +66,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Seçim Yapıldıysa Diğer Ekranı Haberdar Etmek
         if segue.identifier == "toDetailsVC" {
             
             let destinationVC = segue.destination as! DetailsViewController
@@ -71,6 +77,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        // Core Data ve TableView üzerinden silme işleminin yapılması
         if editingStyle == .delete {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
