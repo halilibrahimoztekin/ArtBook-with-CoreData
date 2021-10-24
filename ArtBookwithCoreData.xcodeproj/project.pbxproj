@@ -17,6 +17,7 @@
 		59CBF146272452F000D8D5A8 /* ArtBookwithCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBF145272452F000D8D5A8 /* ArtBookwithCoreDataTests.swift */; };
 		59CBF150272452F000D8D5A8 /* ArtBookwithCoreDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBF14F272452F000D8D5A8 /* ArtBookwithCoreDataUITests.swift */; };
 		59CBF152272452F000D8D5A8 /* ArtBookwithCoreDataUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBF151272452F000D8D5A8 /* ArtBookwithCoreDataUITestsLaunchTests.swift */; };
+		59CBF15F272454F600D8D5A8 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBF15E272454F600D8D5A8 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		59CBF14B272452F000D8D5A8 /* ArtBookwithCoreDataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtBookwithCoreDataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59CBF14F272452F000D8D5A8 /* ArtBookwithCoreDataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBookwithCoreDataUITests.swift; sourceTree = "<group>"; };
 		59CBF151272452F000D8D5A8 /* ArtBookwithCoreDataUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBookwithCoreDataUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		59CBF15E272454F600D8D5A8 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				59CBF139272452F000D8D5A8 /* LaunchScreen.storyboard */,
 				59CBF13C272452F000D8D5A8 /* Info.plist */,
 				59CBF134272452EE00D8D5A8 /* ArtBookwithCoreData.xcdatamodeld */,
+				59CBF15E272454F600D8D5A8 /* DetailsViewController.swift */,
 			);
 			path = ArtBookwithCoreData;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				59CBF12C272452EE00D8D5A8 /* AppDelegate.swift in Sources */,
 				59CBF136272452EE00D8D5A8 /* ArtBookwithCoreData.xcdatamodeld in Sources */,
 				59CBF12E272452EE00D8D5A8 /* SceneDelegate.swift in Sources */,
+				59CBF15F272454F600D8D5A8 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +449,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArtBookwithCoreData/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -472,6 +477,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ArtBookwithCoreData/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
